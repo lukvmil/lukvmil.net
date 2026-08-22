@@ -1,16 +1,80 @@
 body {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  margin: 0;
-  overflow: hidden;
+  font-size: 1.5rem;
+  color: #110c00;
+  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(255, 204, 204, 1) 100%);
 }
 
-.box {
-  display: block;
+.container {
+  background-color: rgb(255, 252, 239);
+  display: grid;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
 }
 
-.green {
-    background-color: green;
+.table {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.column {
+  display: grid;
+  align-content: start;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.cell {
+  box-sizing: border-box;
+  padding: 5px;
+  /* border: 2px solid white; */
+  outline: 1px solid black;
+  /* border-bottom: 2px solid black; */
+}
+
+.cell:hover {
+  box-sizing: border-box;
+  background-color: lightgrey;
+  cursor: pointer;
+  /* transform: translate(-3px, -3px); */
+  /* box-shadow: 3px 3px; */
+  /* border: 2px solid black; */
+}
+
+.noto-serif {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+      "wdth" 100;
+}
+
+.eb-garamond {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.atkinson-hyperlegible-regular {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.atkinson-hyperlegible-bold {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.atkinson-hyperlegible-regular-italic {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.atkinson-hyperlegible-bold-italic {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }

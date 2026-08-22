@@ -3,23 +3,42 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <title>strangebug.net</title>
-        <link href="style.css" rel="stylesheet" />
+        <title>lukvmil</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet", href="style.css">
     </head>
     <body>
-    
-        <div class="box green">
-            <p>hello world</p>
+        <div class="container">
+            <div style="padding: 5px;">lukvmil.net</div>
         </div>
-
+        <div class="container" style="background-color: #fff;">
+            <div style="padding: 5px; font-size: 3rem;" class="atkinson-hyperlegible-regular">Luke Miller is a creative technologist based in NYC, working across disciplines to design interactions mediated by both objects and protocols. He is interested in how intentionally adding friction and slowness to the systems he designs shapes the behavior of those who engage with them.</div>
+        </div>
+        <div class="container table">
+            <div class="column">
+                <div class="cell">KOI-net</div>
+                <div class="cell">Ask Metagov</div>
+                <div class="cell">Telescope</div>
+                <div class="cell">Web of Community</div>
+                <div class="cell">ModPol</div>
+                <div class="cell">DAOstar</div>
+                <div class="cell">Guild Humanitas</div>
+                <div class="cell">strangebug</div>
+            </div>
+            <div class="column">
+                <div class="cell">one</div>
+                <div class="cell">two</div>
+                <div class="cell">three</div>
+                <div class="cell">four</div>
+                <div class="cell">five</div>
+                <div class="cell">six</div>
+                <div class="cell">seven</div>
+            </div>
+            <div class="column">
+                <div class="cell">yo</div>
+            </div>
+        </div>
     </body>
-    <script src="js/gsap.min.js"></script>
-    <script>
-        gsap.to(".box", { 
-            duration: 2,
-            x: 200,
-            rotation: 360,
-            ease: "power1.in"
-        });
-    </script>
 </html>
