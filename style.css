@@ -1,18 +1,37 @@
 body {
+  margin: 0;
   font-size: 1.5rem;
-  color: #110c00;
+  color: #150f00;
+}
+
+div {
+  background-color: rgb(255, 252, 239);
+}
+
+.canvas {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  box-sizing: border-box;
+  padding: 10px;
   background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(255, 204, 204, 1) 100%);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .container {
-  background-color: rgb(255, 252, 239);
   display: grid;
   border-top: 2px solid black;
   border-left: 2px solid black;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .table {
-  grid-template-columns: 1fr 1fr 1fr;
+  flex: 1;
+  min-height: 0;
+  grid-template-columns: 1fr 1fr 2fr;
 }
 
 .column {
@@ -20,19 +39,31 @@ body {
   align-content: start;
   border-right: 2px solid black;
   border-bottom: 2px solid black;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .cell {
-  box-sizing: border-box;
   padding: 5px;
-  /* border: 2px solid white; */
-  outline: 1px solid black;
-  /* border-bottom: 2px solid black; */
+  border: 2px solid transparent;
+  /* padding-inline: 2px; */
+  border-bottom: 2px solid black;
+}
+
+.noborder {
+  border: none;
+}
+
+.header {
+  padding: 5px;
+  background-color: rgb(206, 201, 181);
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
 }
 
 .cell:hover {
   box-sizing: border-box;
-  background-color: lightgrey;
+  background-color: #eff2ff;
   cursor: pointer;
   /* transform: translate(-3px, -3px); */
   /* box-shadow: 3px 3px; */
