@@ -10,42 +10,28 @@
         <link rel="stylesheet", href="style.css">
     </head>
     <body>
+        <!-- <svg style="position: absolute; top: 82px" width="995" height="310" xmlns="http://www.w3.org/2000/svg">
+            <path d="M ... Z" fill="var(--light)" stroke="black" stroke-width="2"/>
+        </svg> -->
         <div class="canvas">
-            <div class="container">
-                <div style="padding: 5px; font-size: 2rem;" class="atkinson-hyperlegible-regular">lukvmil<span style="">.net</span></div>
+            <div class="container header">
+                <div style="padding: 5px; font-size: 2rem;" class="atkinson-hyperlegible-regular">lukvmil.net </div>
             </div>
-            <div class="container" style="background-color: #fff;">
-                <div style="padding: 5px; font-size: 3rem;" class="atkinson-hyperlegible-regular">Luke Miller is a creative technologist based in NYC, working across disciplines to design interactions mediated by both objects and protocols. Blah blah blah blah blah lorem ipsum borum</div>
+            <div>
+                <div class="bio atkinson-hyperlegible-regular">Luke Miller is a creative technologist based in NYC, working across disciplines to design interactions mediated by both objects and protocols. Blah blah blah blah blah lorem ipsum borum</div>
             </div>
+            
             <div class="container table atkinson-hyperlegible-regular">
                 <div class="column">
                     <div class="header">Projects</div>
-                    <div class="cell">KOI-net (2026)</div>
-                    <div class="cell">Ask Metagov</div>
-                    <div class="cell">Telescope</div>
-                    <div class="cell">Web of Community</div>
-                    <div class="cell">ModPol</div>
-                    <div class="cell">DAOstar</div>
-                    <div class="cell">Guild Humanitas</div>
-                    <div class="cell">strangebug</div>
+                    <div class="column" style="border:none", id="project-column"></div>
                 </div>
                 <div class="column">
-                    <div class="header">Items</div>
-                    <div class="cell"><i>Overview</i></div>
-                    <div class="cell">Digital Infrastructure Research & Development: KOI Network Protocol x Project Interlay</div>
-                    <div class="cell">A Preview of the KOI-net Protocol</div>
-                    <div class="cell">Telescope and KOI in Action: Building Feedback Loops for Organisational Intelligence</div>
-                    <div class="cell">Project Spotlight: KOI Pond</div>
-                    <div class="cell">KOI Pond: Building Knowledge Networks</div>
-                    <div class="cell">Metagov Seminar: Introducing KOI</div>
-                    <div class="cell">Metagov Seminar: Computer-Aided Ethnography using Telescope, Obsidian, and KOI</div>
-                    <div class="cell noborder">KOI & The Feudal Internet</div>
-                </div>
-                <div class="column">
-                    <div class="header">Content</div>
-                    <div class="cell">Knowledge Organisation Infrastructure (KOI) is an open protocol that allows communities to collaboratively manage knowledge on their own terms while remaining interoperable with others. Developed by BlockScience with contributions from Metagov and the Australian Research Council Centre of Excellence for Automated Decision-Making and Society (ADM+S), KOI is designed for contexts where knowledge needs to be contextual, traceable, and machine-readable without forcing everyone into the same database or governance model. KOI allows different groups to organise, reference, and share knowledge in a modular, consent-based way. It enables interoperability without centralisation, creating a shared architecture for collective intelligence while preserving local control.</div>
+                    <div class="header">Info</div>
+                    <div class="column" style="border:none", id="info-column"></div>
                 </div>
             </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>
