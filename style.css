@@ -31,7 +31,7 @@ div {
 .table {
   flex: 1;
   min-height: 0;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 3fr;
 }
 
 .column {
@@ -63,10 +63,10 @@ div {
 
 .cell:hover {
   box-sizing: border-box;
-  background-color: #eff2ff;
+  background-color: #9D98FF;
   cursor: pointer;
-  /* transform: translate(-3px, -3px); */
-  /* box-shadow: 3px 3px; */
+  /* transform: translate(-3px, -3px);
+  box-shadow: 3px 3px; */
   /* border: 2px solid black; */
 }
 
@@ -107,5 +107,41 @@ div {
 .atkinson-hyperlegible-bold-italic {
   font-family: "Atkinson Hyperlegible", sans-serif;
   font-weight: 700;
+  font-style: italic;
+}
+
+.dm-mono-light {
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.dm-mono-regular {
+  font-family: "DM Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-mono-medium {
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.dm-mono-light-italic {
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.dm-mono-regular-italic {
+  font-family: "DM Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.dm-mono-medium-italic {
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
   font-style: italic;
 }
