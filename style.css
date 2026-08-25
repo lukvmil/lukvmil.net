@@ -1,14 +1,16 @@
 :root {
   --dark: #150f00;
   --highlight: #9D98FF;
+  --selected: #756eff;
   --light: #fffcef;
-  --mid: rgb(252, 220, 62);
+  --mid: rgb(255, 227, 71);
 }
 
 body {
   margin: 0;
   font-size: 1.5rem;
   color: var(--dark);
+  background: linear-gradient(90deg, rgb(42, 123, 155) 0%, rgb(255, 204, 204) 100%);
 }
 
 div {
@@ -32,20 +34,18 @@ svg {
   grid-template-rows: auto auto 1fr;
   box-sizing: border-box;
   padding: 30px;
-  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(255, 204, 204, 1) 100%);
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .container {
   display: grid;
-  /* border-top: 2px solid var(--dark); */
-  /* border-left: 2px solid var(--dark); */
-  /* border-right: 2px solid var(--dark); */
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  /* border-top: 3px solid var(--dark); */
+  border-left: 3px solid var(--dark);
+  border-right: 3px solid var(--dark);
   background-color: var(--light);
 }
 
@@ -59,8 +59,8 @@ svg {
 .column {
   display: grid;
   align-content: start;
-  border-right: 2px solid var(--dark);
-  /* border-bottom: 2px solid var(--dark); */
+  border-right: 3px solid var(--dark);
+  border-bottom: 3px solid var(--dark);
   overflow-y: scroll;
   scrollbar-width: none;
 }
@@ -69,10 +69,16 @@ svg {
   padding: 5px; 
   font-size: 3rem;
   background-color: var(--light);
-  border-left: 2px dashed var(--dark);
-  border-right: 2px dashed var(--dark);
+  border-left: 3px dashed var(--dark);
+  border-right: 3px dashed var(--dark);
 }
 
+.cell {
+  padding: 7px;
+  /* border: 3px solid transparent; */
+  /* padding-inline: 3px; */
+  border-bottom: 3px solid var(--dark);
+}
 
 .noborder {
   border: none;
@@ -81,46 +87,19 @@ svg {
 .header {
   padding: 7px;
   background-color: var(--mid);
-  border-bottom: 2px solid var(--dark);
+  border-bottom: 3px solid var(--dark);
 }
 
-.cell {
-  position: relative;
-  overflow: hidden;
-  padding: 7px;
-  /* border: 2px solid transparent; */
-  /* padding-inline: 2px; */
-  border-bottom: 2px solid var(--dark);
-  z-index: 0;
-}
-
-.cell:hover {
-  box-sizing: border-box;
-  /* background-color: var(--highlight); */
+.cell:hover:not(.selected) {
+  background-color: var(--highlight);
   cursor: pointer;
   /* transform: translate(-3px, -3px);
   box-shadow: 3px 3px; */
-  /* border: 2px solid black; */
+  /* border: 3px solid black; */
 }
 
-.cell::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 170%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background-color: var(--highlight);
-  transform: translate(-50%, -50%) scale(0);
-  transform-origin: 50% 50%; /* the "origin" corner — top-left of the cell */
-  transition: transform 0.3s ease-out;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.cell:hover::before {
-  transform: translate(-50%, -50%) scale(1);
+.selected {
+  background-color: var(--selected);
 }
 
 .noto-serif {
