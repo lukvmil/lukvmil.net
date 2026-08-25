@@ -73,12 +73,6 @@ svg {
   border-right: 2px dashed var(--dark);
 }
 
-.cell {
-  padding: 7px;
-  /* border: 2px solid transparent; */
-  /* padding-inline: 2px; */
-  border-bottom: 2px solid var(--dark);
-}
 
 .noborder {
   border: none;
@@ -90,13 +84,43 @@ svg {
   border-bottom: 2px solid var(--dark);
 }
 
+.cell {
+  position: relative;
+  overflow: hidden;
+  padding: 7px;
+  /* border: 2px solid transparent; */
+  /* padding-inline: 2px; */
+  border-bottom: 2px solid var(--dark);
+  z-index: 0;
+}
+
 .cell:hover {
   box-sizing: border-box;
-  background-color: var(--highlight);
+  /* background-color: var(--highlight); */
   cursor: pointer;
   /* transform: translate(-3px, -3px);
   box-shadow: 3px 3px; */
   /* border: 2px solid black; */
+}
+
+.cell::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 170%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--highlight);
+  transform: translate(-50%, -50%) scale(0);
+  transform-origin: 50% 50%; /* the "origin" corner — top-left of the cell */
+  transition: transform 0.3s ease-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cell:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .noto-serif {
