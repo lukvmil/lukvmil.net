@@ -54,9 +54,9 @@ function clickProject(projId) {
     }
 }
 
-fetch("projects.json")
-    .then(resp => resp.json())
-    .then(data => {
-        projects = data;
-        setupProjects();
-    });
+// fetch("projects.json")
+//     .then(resp => resp.json())
+//     .then(data => {
+//         projects = data;
+//         setupProjects();
+//     });
