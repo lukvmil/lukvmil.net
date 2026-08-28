@@ -3,7 +3,9 @@
   --highlight: #9D98FF;
   --selected: #756eff;
   --light: #fffcef;
-  --mid: #FFD23F;
+  --yellow: #FFD23F;
+  --brown: #2f2100;
+  --green: #007000;
   /* #FFD198
   #C7FF98 */
 }
@@ -83,7 +85,7 @@ svg {
   padding: 7px;
   margin-bottom: 20px;
   font-size: 4rem;
-  background-color: #2f2100;
+  background-color: var(--brown);
   color: var(--light);
   /* border-left: 3px dashed var(--dark);
   border-right: 3px dashed var(--dark); */
@@ -108,7 +110,7 @@ svg {
 
 .header {
   padding: 7px;
-  background-color: var(--mid);
+  background-color: var(--yellow);
   border-bottom: 3px solid var(--dark);
 }
 
