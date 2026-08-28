@@ -5,7 +5,7 @@
   --light: #fffcef;
   --yellow: #FFD23F;
   --brown: #2f2100;
-  --green: #007000;
+  --green: #69bc69;
   /* #FFD198
   #C7FF98 */
 }
@@ -13,8 +13,7 @@
 body {
   margin: 0;
   font-size: 1.5rem;
-  color: var(--dark);
-  background-color: #9D98FF;
+  background-color: var(--highlight);
   /* background: linear-gradient(90deg, rgb(42, 123, 155) 0%, rgb(255, 204, 204) 100%); */
   background-image: radial-gradient(circle at 20px 20px, var(--selected) 2px, transparent 0);
   background-size: 40px 40px;
@@ -39,7 +38,7 @@ svg {
 
 .canvas {
   /* display: grid; */
-  grid-template-rows: auto auto 1fr;
+  /* grid-template-rows: auto auto 1fr; */
   box-sizing: border-box;
   padding: 30px;
   /* height: 100vh; */
@@ -63,7 +62,7 @@ svg {
   /* flex: 1; */
   /* min-height: 0; */
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: auto auto auto;
 }
 
 .row {
@@ -117,8 +116,8 @@ svg {
 .row:hover:not(.selected) {
   background-color: var(--highlight);
   cursor: pointer;
-  /* transform: translate(-3px, -3px);
-  box-shadow: 3px 3px; */
+  /* transform: translate(0px, -3px);
+  box-shadow: 0px 3px; */
   /* border: 3px solid black; */
 }
 
@@ -204,10 +203,19 @@ svg {
 }
 
 
-.bricolage-grotesque {
+.bricolage-grotesque-regular {
   font-family: "Bricolage Grotesque", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.bricolage-grotesque-bold {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
