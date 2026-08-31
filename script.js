@@ -1,17 +1,31 @@
-const projectColumn = document.getElementById("project-column");
-const infoColumn = document.getElementById("info-column");
+const projTable = document.getElementById("project-table");
 
 let projects = {};
 
 function setupProjects() {
     for (const [projId, proj] of Object.entries(projects)) {
-        projectCell = document.createElement("div");
-        projectCell.id = projId;
-        projectCell.classList.add("cell");
-        projectCell.innerHTML = proj.name;
-        projectCell.onclick = () => {clickProject(projId)};
+        let projRow = document.createElement("div")
+        projRow.id = projId;
+        projRow.classList.add("row");
+        projRow.onclick = () => {clickProject(projId)};
 
-        projectColumn.appendChild(projectCell);
+        let nameCell = document.createElement("div");
+        nameCell.classList.add("cell");
+        nameCell.innerHTML = proj.name;
+        
+        let roleCell = document.createElement("div");
+        roleCell.classList.add("cell");
+        roleCell.innerHTML = proj.role;
+        
+        let yearCell = document.createElement("div");
+        yearCell.classList.add("cell");
+        yearCell.innerHTML = proj.year;
+        
+        projRow.appendChild(nameCell);
+        projRow.appendChild(roleCell);
+        projRow.appendChild(yearCell);
+
+        projTable.appendChild(projRow);
     }
 }
 
@@ -54,9 +68,9 @@ function clickProject(projId) {
     }
 }
 
-// fetch("projects.json")
-//     .then(resp => resp.json())
-//     .then(data => {
-//         projects = data;
-//         setupProjects();
-//     });
+fetch("projects.json")
+    .then(resp => resp.json())
+    .then(data => {
+        projects = data;
+        setupProjects();
+    });
