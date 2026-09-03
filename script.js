@@ -79,6 +79,13 @@ function setupProjects() {
 
 var accordions = document.getElementsByClassName("accordion");
 for (const acc of accordions) {
+    let cell = document.createElement("div");
+    cell.classList.add("cell");
+    cell.innerHTML = `<svg class="chevron" width="1em" height="1em" viewBox="2 2 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 9L12 15L18 9" fill="none" stroke="#150f00" stroke-width="2" stroke-linecap="square" transform="rotate(-90 12 12)"/>
+    </svg>`;
+    acc.appendChild(cell);
+
     acc.addEventListener("click", function() {
         this.classList.toggle("active");
 
