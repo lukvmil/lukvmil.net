@@ -151,7 +151,7 @@ span.alt2 {
   /* flex: 1; */
   /* min-height: 0; */
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto 2em;
 }
 
 .row {
@@ -164,6 +164,19 @@ span.alt2 {
   border-bottom: var(--border);
 }
 
+.row.active .chevron {
+  transform: rotate(0deg);
+}
+
+.row.active {
+  background-color: var(--selected);
+}
+
+.row .chevron {
+  transform: rotate(-90deg);
+  transition: transform 0.4s ease;
+}
+
 .accordion {
   cursor: pointer;
   /* transition: 0.4s; */
@@ -174,7 +187,7 @@ span.alt2 {
   grid-column: 1 / -1;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.4s ease;
   grid-template-columns: none;
   border-bottom: var(--border);
   margin-top: calc(-1 * var(--border-width));
@@ -213,7 +226,6 @@ span.alt2 {
 }
 
 .header {
-  padding: 0.5em;
   background-color: var(--yellow);
 }
 
@@ -237,7 +249,7 @@ span.alt2 {
   }
   
   .table {
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto 2em;
   }
   :root {
     --border-width: 2px;
