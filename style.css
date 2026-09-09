@@ -153,7 +153,7 @@ span.alt2 {
   /* flex: 1; */
   /* min-height: 0; */
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) min-content 2em;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) min-content min-content min-content 2em;
 }
 
 .row {
@@ -198,11 +198,32 @@ span.alt2 {
 
 .panel-inner {
   padding: 1em;
-  padding-top: calc(1em + 1 * var(--border-width));
+  /* padding-top: calc(1em + 1 * var(--border-width)); */
   border-bottom: var(--dark) dashed var(--border-width);
   /* background-image: radial-gradient(circle at 10px 10px, var(--dark-yellow) 2px, transparent 0);
   background-size: 20px 20px; */
+}
 
+figure {
+  background-color: var(--light);
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  /* box-shadow: 3px 3px var(--brown); */
+}
+
+figcaption {
+  text-align: center;
+  border-left: var(--border);
+  border-right: var(--border);
+  border-bottom: var(--border);
+  font-style: italic;
+  font-size: min(3vw, 1rem);
+  padding: 0.5em;
+  width: 0;
+  min-width: 100%;
+  box-sizing: border-box;
 }
 
 .stripes {
@@ -217,14 +238,10 @@ span.alt2 {
 }
 
 .panel img {
-  /* width: 100%; */
-  display: block; 
-  object-fit: contain;
-  /* box-sizing: border-box; */
+  display: block;
+  max-width: 100%;
+  height: auto;
   max-height: 40vh;
-  /* margin-bottom: 1em; */
-  margin-left: auto;
-  margin-right: auto;
   border: var(--border);
 }
 

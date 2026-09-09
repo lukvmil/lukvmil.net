@@ -88,9 +88,7 @@ for (const acc of accordions) {
 
     acc.addEventListener("click", function() {
         this.classList.toggle("active");
-
-        console.log("yo");
-
+        
         var panel = this.nextElementSibling;
         console.log(panel.style.maxHeight);
         if (panel.style.maxHeight) {
