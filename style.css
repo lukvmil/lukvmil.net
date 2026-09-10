@@ -68,8 +68,14 @@ svg {
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
-  /* mask-image: linear-gradient(to right, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%); */
+  /* mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black var(--fade-start),
+    black calc(100% - var(--fade-end)),
+    transparent 100%
+  ); */
+  /* -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%); */
 }
 
 .lang-button {
@@ -149,7 +155,7 @@ svg {
 }
 
 .bio span:hover {
-  background-size: 100% 150%;
+  background-size: 100% 180%;
   /* background-position: 100% 200%; */
 }
 
@@ -201,7 +207,6 @@ span.alt2 {
 
 .accordion {
   cursor: pointer;
-  /* transition: 0.4s; */
 }
 
 .panel {
@@ -228,9 +233,24 @@ span.alt2 {
 .panel-inner {
   padding: 1em;
   /* padding-top: calc(1em + 1 * var(--border-width)); */
-  border-bottom: var(--dark) dashed var(--border-width);
+  border-bottom: var(--dark) dotted var(--border-width);
   /* background-image: radial-gradient(circle at 10px 10px, var(--dark-yellow) 2px, transparent 0);
   background-size: 20px 20px; */
+}
+
+.panel-link {
+  background-clip: padding-box;
+  display: block; 
+  color: inherit; 
+  text-decoration: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  transition: background-color 0.3s ease;
+}
+
+.panel-link:hover {
+  background-color: var(--highlight);
+  transition: background-color 0;
 }
 
 .panel-inner:last-child {
@@ -260,6 +280,7 @@ figcaption {
 }
 
 .stripes {
+  background-clip: padding-box;
   background-image: repeating-linear-gradient(
     45deg,
     var(--off-light) 0px,
@@ -267,7 +288,20 @@ figcaption {
     transparent 2px,
     transparent 24px
   );
+}
+
+.stripes:first-child {
   clip-path: inset(var(--border-width) 0 0 0);
+}
+
+.stripes:nth-child(even) {
+    background-image: repeating-linear-gradient(
+    -45deg,
+    var(--off-light) 0px,
+    var(--off-light) 3px,
+    transparent 2px,
+    transparent 24px
+  );
 }
 
 .panel img {
@@ -313,7 +347,7 @@ figcaption {
   /* border: 3px solid black; */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .cell:nth-child(2), .cell:nth-child(3), .cell:nth-child(4) {
     display: none;
   }
