@@ -61,6 +61,7 @@ svg {
   padding: 0.4em;
   font-size: min(6vw, 2rem);
   color: var(--dark-yellow);
+  display: flex;
 }
 
 .scroll-container {
@@ -69,6 +70,25 @@ svg {
   scrollbar-width: none;
   /* mask-image: linear-gradient(to right, black 70%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%); */
+}
+
+.lang-button {
+  margin-left: auto;
+  padding-left: 0.4em;
+}
+
+.lang-button path {
+  fill: var(--dark-yellow);
+  transition: fill 0.3s ease;
+}
+
+.lang-button:hover path {
+  fill: var(--dark);
+  transition: color 0s;
+}
+
+.lang-button:hover {
+  cursor: pointer;
 }
 
 .title a:first-child {
@@ -187,13 +207,22 @@ span.alt2 {
 .panel {
   box-sizing: border-box;
   grid-column: 1 / -1;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.4s ease;
+  display: grid;
   grid-template-columns: none;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+  overflow: hidden;
   border-bottom: var(--border);
   margin-top: calc(-1 * var(--border-width));
   /* contain: inline-size; */
+}
+
+.accordion.active + .panel {
+  grid-template-rows: 1fr;
+}
+
+.panel > .panel-body {
+  min-height: 0;
 }
 
 .panel-inner {
@@ -202,6 +231,10 @@ span.alt2 {
   border-bottom: var(--dark) dashed var(--border-width);
   /* background-image: radial-gradient(circle at 10px 10px, var(--dark-yellow) 2px, transparent 0);
   background-size: 20px 20px; */
+}
+
+.panel-inner:last-child {
+  border-bottom: none;
 }
 
 figure {
@@ -238,6 +271,7 @@ figcaption {
 }
 
 .panel img {
+  box-sizing: border-box;
   display: block;
   max-width: 100%;
   height: auto;
@@ -254,6 +288,11 @@ figcaption {
   text-overflow: ellipsis; */
   overflow-x: hidden;
   text-overflow: ellipsis;
+}
+
+.cell:nth-child(4) {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .noborder {
@@ -275,15 +314,12 @@ figcaption {
 }
 
 @media (max-width: 600px) {
-  .row .cell:nth-child(2) {
-    display: none;
-  }
-  .row .header:nth-child(2) {
+  .cell:nth-child(2), .cell:nth-child(3), .cell:nth-child(4) {
     display: none;
   }
   
   .table {
-    grid-template-columns: auto auto 2em;
+    grid-template-columns: minmax(0, 1fr) min-content 2em;
   }
   :root {
     --border-width: 2px;
