@@ -352,7 +352,7 @@ figcaption {
 }
 
 @media (max-width: 800px) {
-  .cell:nth-child(2), .cell:nth-child(3), .cell:nth-child(4) {
+  .cell:nth-child(2) {
     display: none;
   }
   
