@@ -68,14 +68,9 @@ svg {
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
-  /* mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    black var(--fade-start),
-    black calc(100% - var(--fade-end)),
-    transparent 100%
-  ); */
-  /* -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%); */
+  padding-right: 2em;
+  mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
 }
 
 .lang-button {
@@ -129,14 +124,11 @@ svg {
   font-size: min(8vw, 3rem);
   background-color: var(--brown);
   color: var(--light);
-  /* border-left: 3px dashed var(--dark);
-  border-right: 3px dashed var(--dark); */
   border: var(--border);
-  /* box-shadow: 5px 5px var(--dark); */
 }
 
 .bio span {
-  color: var(--highlight);
+  /* color: var(--highlight); */
   background: radial-gradient(
     var(--highlight) 0%,
     var(--magenta) 30%,
@@ -219,6 +211,8 @@ span.alt2 {
   overflow: hidden;
   border-bottom: var(--border);
   margin-top: calc(-1 * var(--border-width));
+  /* background-color: var(--off-light); */
+  clip-path: inset(var(--border-width) 0 0 0);
   /* contain: inline-size; */
 }
 
@@ -241,8 +235,9 @@ span.alt2 {
 .panel-link {
   background-clip: padding-box;
   display: block; 
-  color: inherit; 
-  text-decoration: none;
+  color: var(--magenta); 
+  font-style: italic;
+  /* font-weight: bold; */
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   transition: background-color 0.3s ease;
@@ -251,10 +246,19 @@ span.alt2 {
 .panel-link:hover {
   background-color: var(--highlight);
   transition: background-color 0;
+  /* color: var(--light); */
 }
 
 .panel-inner:last-child {
   border-bottom: none;
+}
+
+.panel-inner > p {
+  margin: 0;
+}
+
+.panel-inner > p + p {
+  margin-top: 1em;
 }
 
 figure {
@@ -284,7 +288,7 @@ figcaption {
   background-image: repeating-linear-gradient(
     45deg,
     var(--off-light) 0px,
-    var(--off-light) 3px,
+    var(--off-light) 5px,
     transparent 2px,
     transparent 24px
   );
@@ -298,7 +302,7 @@ figcaption {
     background-image: repeating-linear-gradient(
     -45deg,
     var(--off-light) 0px,
-    var(--off-light) 3px,
+    var(--off-light) 5px,
     transparent 2px,
     transparent 24px
   );
