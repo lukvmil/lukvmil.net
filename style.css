@@ -4,12 +4,14 @@
   --selected: #756eff;
   --light: #fffcef;
   --off-light: #f4f0db;
+  --cream: #fff7d2;
   --yellow: #FFD23F;
   --dark-yellow: #bf9300;
   --brown: #2f2100;
   --green: #007000;
   --cyan: #4ef8fb;
   --magenta: #cf16cf;
+  --magenta-plus: #ff30ff;
   /* #FFD198
   #C7FF98 */
   --border-width: 3px;
@@ -152,14 +154,18 @@ svg {
 }
 
 span.alt {
-  background: linear-gradient(to top, #4ef8fb, #cf16cf);
+  background-size: 100% 800%;
+  background-position: 0% 0%;
+  background: linear-gradient(45deg, var(--cyan), var(--magenta));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  /* transition: --grad-angle 0.4s ease; */
 }
 
+
 span.alt2 {
-  background: linear-gradient(to top, #cf16cf, rgb(237, 88, 14));
+  background: linear-gradient(to top, var(--magenta), rgb(237, 88, 14));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -176,7 +182,7 @@ span.alt2 {
 
 .row {
   /* display: contents; */
-  /* background-color: black; */
+  /* background-color: #ffffff; */
   display: grid;
   grid-template-columns: subgrid;
   grid-column: 1 / -1;
@@ -211,7 +217,7 @@ span.alt2 {
   overflow: hidden;
   border-bottom: var(--border);
   margin-top: calc(-1 * var(--border-width));
-  /* background-color: var(--off-light); */
+  background-color: var(--off-light);
   clip-path: inset(var(--border-width) 0 0 0);
   /* contain: inline-size; */
 }
@@ -244,9 +250,9 @@ span.alt2 {
 }
 
 .panel-link:hover {
-  background-color: var(--highlight);
+  background-color: var(--light);
   transition: background-color 0;
-  /* color: var(--light); */
+  color: var(--magenta-plus);
 }
 
 .panel-inner:last-child {
@@ -267,7 +273,6 @@ figure {
   width: fit-content;
   max-width: 100%;
   margin: 0 auto;
-  /* box-shadow: 3px 3px var(--brown); */
 }
 
 figcaption {
@@ -287,10 +292,10 @@ figcaption {
   background-clip: padding-box;
   background-image: repeating-linear-gradient(
     45deg,
-    var(--off-light) 0px,
-    var(--off-light) 5px,
-    transparent 2px,
-    transparent 24px
+    var(--off-light) 0em,
+    var(--off-light) 0.15em,
+    transparent 0.15em,
+    transparent 1em
   );
 }
 
@@ -299,12 +304,12 @@ figcaption {
 }
 
 .stripes:nth-child(even) {
-    background-image: repeating-linear-gradient(
+  background-image: repeating-linear-gradient(
     -45deg,
-    var(--off-light) 0px,
-    var(--off-light) 5px,
-    transparent 2px,
-    transparent 24px
+    var(--off-light) 0em,
+    var(--off-light) 0.15em,
+    transparent 0.15em,
+    transparent 1em
   );
 }
 
@@ -347,7 +352,6 @@ figcaption {
   transition: background-color 0s;
 
   /* transform: translate(-10px); */
-  /* box-shadow: 3px 3px; */
   /* border: 3px solid black; */
 }
 
@@ -362,6 +366,10 @@ figcaption {
   :root {
     --border-width: 2px;
     --border: var(--border-width) solid var(--dark);
+  }
+
+  .container {
+      box-shadow: 3px 3px var(--brown);
   }
 }
 
